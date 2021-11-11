@@ -21,6 +21,15 @@ Camera::Camera(void)
 
 }
 
+/*
+n = -l.v / size(l)
+u = cross(l, r) / size(cross(l, r))
+v = cross(n, u)
+
+distance = (near + far) / 2
+width = 2 * distance * tan(fov / 2)
+hdight = width / aspect
+*/
 Camera::Camera(const Point & E, const Vector & look, const Vector & vp, float fov, float aspect, float near, float far)
 :near(near), far(far)
 {
